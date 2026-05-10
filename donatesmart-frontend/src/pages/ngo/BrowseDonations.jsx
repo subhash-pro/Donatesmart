@@ -47,7 +47,7 @@ function BrowseDonations() {
             const params = []
             if (selectedCategory) params.push(`category=${selectedCategory}`)
             if (searchCity) params.push(`city=${searchCity}`)
-            const url = params.length ? '?' + params.join('&') : ''
+            const url = params.length ? '?' + params.join('&') : '/donations'
             const res = await getAllDonations(url)
             setDonations(res.data.data)
         } catch (err) { console.error(err) }
